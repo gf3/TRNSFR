@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+<head>
+ <title>jQuery TRNSFR Plugin - Sexy Progress Bars</title>
+  <!--[if IE]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+</head>
+<body>
+
+<header>
+  <hgroup>
+    <h1>TRNSFR</h1>
+    <h2>A Transmit 4-inspired multi progress bar.</h2>
+  </hgroup>
+</header>
+
+<section id="demo">
+  <header>
+    <h3>Demo</h3>
+  </header>
+
+  <p>Simulate the upload of ten 1MB files.</p>
+
+  <div id="progress-1">Ready</div>
+
+  <a href="#" id="upload-1">Upload a Bunch of Files</a>
+</section>
+
+<footer>
+  <header>
+    <h3>Joey, have you ever been in a... in a Turkish prison?</h3>
+  </header>
+</footer>
+
+<script src="../vendor/jquery-1.4.2.min.js"></script>
+<script src="../lib/jquery.trnsfr.js"></script>
+<script>
+  var timer
+    , files = [ 1024, 1024, 1024, 1024, 1024, 1024, 1024, 1024, 1024, 1024]
+    , progress_1 = $('#progress-1').trnsfr(
+      { files: files
+      })
+
+  $('#upload-1').click(function() {
+      var total_size = _.reduce(files, 0, function(m, o) { return m + o; })
+        , done_size  = 0
+      timer = setInterval(function() {
+        if (done_size < total_size)
+          done_size = progress_1.addData(128)
+        else
+          clearInterval(timer)
+      }, 125);
+  });
+</script>
+
+</body>
+</html>
