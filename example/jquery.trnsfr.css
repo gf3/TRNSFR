@@ -1,0 +1,7 @@
+
+.progress {
+  display: block;
+  height: 15px;
+  width: 0;
+  background-color: #999;
+}

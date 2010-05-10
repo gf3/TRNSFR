@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en-CA">
 <head>
- <title>jQuery TRNSFR Plugin - Sexy Progress Bars</title>
+ <title>jQuery TRNSFR - Sexy Progress Bars</title>
   <!--[if IE]>
     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
+
+  <link rel="stylesheet" href="jquery.trnsfr.css" type="text/css">
 </head>
 <body>
 
@@ -22,7 +24,7 @@
 
   <p>Simulate the upload of ten 1MB files.</p>
 
-  <div id="progress-1">Ready</div>
+  <div id="progress-1"></div>
 
   <a href="#" id="upload-1">Upload a Bunch of Files</a>
 </section>
@@ -38,20 +40,16 @@
 <script>
   var timer
     , files = [ 1024, 1024, 1024, 1024, 1024, 1024, 1024, 1024, 1024, 1024]
-    , progress_1 = $('#progress-1').trnsfr(
-      { files: files
-      })
+    , progress_1 = $('#progress-1').trnsfr(files)
 
   $('#upload-1').click(function() {
-      var total_size = _.reduce(files, 0, function(m, o) { return m + o; })
-        , done_size  = 0
       timer = setInterval(function() {
-        if (done_size < total_size)
-          done_size = progress_1.addData(128)
+        if (! progress_1.complete)
+          progress_1.addData(128)
         else
           clearInterval(timer)
-      }, 125);
-  });
+        return false
+      }, 125) })
 </script>
 
 </body>
