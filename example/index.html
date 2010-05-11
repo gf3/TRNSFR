@@ -6,30 +6,34 @@
     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
 
-  <link rel="stylesheet" href="jquery.trnsfr.css" type="text/css">
+  <link rel="stylesheet" href="stylesheets/tripoli.simple.css" type="text/css">
+  <!--[if IE]><link rel="stylesheet" href="stylesheets/tripoli.simple.ie.css" type="text/css"><![endif]-->
+  <link rel="stylesheet" href="stylesheets/jquery.trnsfr.css" type="text/css">
 </head>
 <body>
 
-<header>
+<header class="content">
   <hgroup>
     <h1>TRNSFR</h1>
     <h2>A Transmit 4-inspired multi progress bar.</h2>
   </hgroup>
 </header>
 
-<section id="demo">
+<section id="demo" class="content">
   <header>
     <h3>Demo</h3>
   </header>
 
   <p>Simulate the upload of ten 1MB files.</p>
 
-  <div id="progress-1"></div>
+  <div class="demo_container">
+    <div id="progress-1"></div>
 
-  <a href="#" id="upload-1">Upload a Bunch of Files</a>
+    <a href="#" id="upload-1" class="button light">Upload a Bunch of Files</a>
+  </div>
 </section>
 
-<footer>
+<footer class="content">
   <header>
     <h3>Joey, have you ever been in a... in a Turkish prison?</h3>
   </header>
@@ -38,6 +42,7 @@
 <script src="../vendor/jquery-1.4.2.min.js"></script>
 <script src="../lib/jquery.trnsfr.js"></script>
 <script>
+
   var timer
     , files = [ 1024, 1024, 1024, 1024, 1024, 1024, 1024, 1024, 1024, 1024]
     , progress_1 = $('#progress-1').trnsfr(files)
@@ -47,9 +52,30 @@
         if (! progress_1.complete)
           progress_1.addData(128)
         else
-          clearInterval(timer)
-        return false
-      }, 125) })
+          clearInterval(timer) }, 125)
+      return false })
+
+</script>
+
+<script>
+// DEBUG
+var gOverride =
+  { urlBase: 'http://gridder.andreehansson.se/releases/latest/'
+  , gColor: '#EEEEEE'
+  , gColumns: 12
+  , gOpacity: 0.35
+  , gWidth: 10
+  , pColor: '#C0C0C0'
+  , pHeight: 18
+  , pOffset: 0
+  , pOpacity: 0.55
+  , center: true
+  , gEnabled: true
+  , pEnabled: true
+  , setupEnabled: true
+  , fixFlash: true
+  , size: 960
+  }
 </script>
 
 </body>
