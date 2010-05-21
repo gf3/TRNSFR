@@ -51,6 +51,25 @@
   </header>
 
   <p>OMG IS MANUAL</p>
+  <dl>
+    <dt>TRNSFR#addData(bytes) &rarr; Void
+    <dd>Add some data, lol
+
+    <dt>TRNSFR#setData(bytes) &rarr; Void
+    <dd>Set some data, haha
+
+    <dt>TRNSFR#complete &rarr; Boolean
+    <dd>Set some data, haha
+
+    <dt>TRNSFR#total_size &rarr; Number
+    <dd>Set some data, haha
+
+    <dt>TRNSFR#done_size &rarr; Number
+    <dd>Set some data, haha
+
+    <dt>TRNSFR#options &rarr; Object
+    <dd>Set some data, haha
+  </dl>
 </section>
 
 <!-- Footer -->
@@ -65,7 +84,7 @@
 <script>
 
   var timer
-    , files = [ 1024, 1024, 1024, 1024, 1024, 1024, 1024, 1024, 1024, 1024]
+    , files = [ 1024, 1024, 1024, 1024, 1024, 1024, 1024, 1024, 1024, 1024 ]
     , progress_1 = $('#progress-1').trnsfr(files)
 
   $('#upload-1').click(function() {
