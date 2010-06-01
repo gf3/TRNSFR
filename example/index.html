@@ -8,7 +8,8 @@
 
   <link rel="stylesheet" href="stylesheets/tripoli.simple.css" type="text/css">
   <!--[if IE]><link rel="stylesheet" href="stylesheets/tripoli.simple.ie.css" type="text/css"><![endif]-->
-  <link rel="stylesheet" href="stylesheets/jquery.trnsfr.css" type="text/css">
+  <link rel="stylesheet" href="stylesheets/example.css" type="text/css">
+  <link rel="stylesheet" href="../lib/jquery.trnsfr.css" type="text/css">
 </head>
 <body>
 
@@ -53,10 +54,20 @@
   <p>OMG IS MANUAL</p>
   <dl>
     <dt>TRNSFR#addData(bytes) &rarr; Void
-    <dd>Add some data, lol
+    <dd>
+      <ol>
+        <li>bytes (Number) &ndash; 
+      </ol>
+      <p>
+        Add a chunk of data to the total bytes loaded.
 
     <dt>TRNSFR#setData(bytes) &rarr; Void
-    <dd>Set some data, haha
+    <dd>
+      <ol>
+        <li>bytes (Number) &ndash; 
+      </ol>
+      <p>
+        Set the amount of total bytes loaded.
 
     <dt>TRNSFR#complete &rarr; Boolean
     <dd>Set some data, haha
@@ -95,27 +106,25 @@
           clearInterval(timer) }, 125)
       return false })
 
-</script>
-
-<script>
-// DEBUG
-var gOverride =
-  { urlBase: 'http://gridder.andreehansson.se/releases/latest/'
-  , gColor: '#EEEEEE'
-  , gColumns: 12
-  , gOpacity: 0.35
-  , gWidth: 10
-  , pColor: '#C0C0C0'
-  , pHeight: 18
-  , pOffset: 0
-  , pOpacity: 0.55
-  , center: true
-  , gEnabled: true
-  , pEnabled: true
-  , setupEnabled: true
-  , fixFlash: true
-  , size: 960
+  // 960 Gridder
+  var gOverride =
+    { urlBase: 'http://gridder.andreehansson.se/releases/latest/'
+    , gColor: '#EEEEEE'
+    , gColumns: 12
+    , gOpacity: 0.35
+    , gWidth: 10
+    , pColor: '#C0C0C0'
+    , pHeight: 18
+    , pOffset: 0
+    , pOpacity: 0.55
+    , center: true
+    , gEnabled: true
+    , pEnabled: true
+    , setupEnabled: true
+    , fixFlash: true
+    , size: 960
   }
+
 </script>
 
 </body>
