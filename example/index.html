@@ -10,7 +10,7 @@
   <!--[if IE]><link rel="stylesheet" href="stylesheets/tripoli.simple.ie.css" type="text/css"><![endif]-->
   <link rel="stylesheet" href="stylesheets/example.css" type="text/css">
   <link rel="stylesheet" href="../lib/jquery.trnsfr.css" type="text/css">
-</head>
+
 <body>
 
 <!-- Header -->
@@ -27,7 +27,7 @@
     <h3>Demo</h3>
   </header>
 
-  <p>Simulate the upload of ten 1MB files.</p>
+  <p>Simulate the upload of ten 1MB files.
 
   <div class="demo_container">
     <div id="progress-1"></div>
@@ -42,7 +42,7 @@
     <h3>Usage</h3>
   </header>
 
-  <p>LOL NO U</p>
+  <p>LOL NO U
 </section>
 
 <!-- Docs -->
@@ -51,7 +51,8 @@
     <h3>Docs</h3>
   </header>
 
-  <p>OMG IS MANUAL</p>
+  <p>OMG IS MANUAL
+
   <dl>
     <dt>TRNSFR#addData(bytes) &rarr; Void
     <dd>
@@ -88,6 +89,10 @@
   <header>
     <h3>Joey, have you ever been in a... in a Turkish prison?</h3>
   </header>
+
+  <p>Written by <a href="http://gf3.ca" class="author">Gianni "gf3" Chiappetta</a>. &copy; Copyright your mom... but SRSLY copyrights are for tools.
+
+  <p>A big thank-you to <a href="http://allyoucanleet.com/" class="author">John David Dalton</a> for putting up with my constant JS performance questions.
 </footer>
 
 <script src="../vendor/jquery-1.4.2.min.js"></script>
@@ -99,11 +104,15 @@
     , progress_1 = $('#progress-1').trnsfr(files)
 
   $('#upload-1').click(function() {
+      var $this = $(this)
+        .css('opacity', .5)
+        .html('LOL')
+
       timer = setInterval(function() {
         if (! progress_1.complete)
           progress_1.addData(128)
         else
-          clearInterval(timer) }, 125)
+          clearInterval(timer), $this.html('Complete') }, 125)
       return false })
 
   // 960 Gridder
@@ -127,5 +136,3 @@
 
 </script>
 
-</body>
-</html>
