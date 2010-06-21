@@ -44,7 +44,7 @@
 
   <p>LOL NO U
 
-  <code><pre>// TRNSFR needs to know how many files you have, and big they each are
+  <code class="prettyprint lang-js"><pre>// TRNSFR needs to know how many files you have, and big they each are
 // Normally you will get this info from your upload script (i.e. HTML5 files API, Plupload, Uploadify, SWFObject, etc...)
 var files = [2048, 2048, 2048] // Three 2MB files
 
@@ -113,6 +113,7 @@ uploader.onuploadevent = function(total_sent) {
   <p>A big thank-you to <a href="http://allyoucanleet.com/" class="author">John David Dalton</a> for putting up with my constant JS performance questions.
 </footer>
 
+<script src="javascripts/prettify.js"></script>
 <script src="../vendor/jquery-1.4.2.min.js"></script>
 <script src="../lib/jquery.trnsfr.js"></script>
 <script>
@@ -132,6 +133,9 @@ uploader.onuploadevent = function(total_sent) {
         else
           clearInterval(timer), $this.html('Complete') }, 125)
       return false })
+
+  // Pretty Print
+  $(prettyPrint)
 
   // 960 Gridder
   var gOverride =
