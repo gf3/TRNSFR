@@ -12,7 +12,14 @@
   #000000   Colour      Used for:   
   ---------------------------------------------------------------------
 */
+html, body {
+  background-color: #EBEBEB;
+  font-size: 14px;
+  line-height: 18px;
+  color: #414141;
+}
 
+/* Typography */
 @font-face {
   font-family: 'RalewayThin';
   src: url('../fonts/raleway_thin-webfont.eot');
@@ -56,14 +63,6 @@
   font-style: normal;
 }
 
-html, body {
-  background-color: #EBEBEB;
-  font-size: 12px;
-  line-height: 18px;
-  color: #414141;
-}
-
-/* Typography */
 h1, h2, h3 {
   font-family: RalewayThin, Helvetica;
   font-weight: normal;
@@ -95,19 +94,40 @@ p, ul, ol{
   margin-bottom: 18px;
 }
 
+/* Links */
+.content a:link {
+  text-decoration: underline;
+  color: #3A3939;
+}
+.content a:visited {
+  text-decoration: underline;
+  color: #3A3939;
+}
+.content a:hover {
+  text-decoration: underline;
+  color: #00b4ff;
+}
+.content a:active {
+  text-decoration: underline;
+  color: #3A3939;
+}
+
 /* Common Layout */
 body > header, section, footer {
+  display: block;
   margin: 18px auto;
   width: 960px;
 }
 
 /* ------------------------------ Code ------------------------------ */
+code { font-family: DejaVuSansMonoBook; }
 code > pre {
   margin: 18px 0;
   padding: 9px;
   width: 942px;
   background: #1F1F1F;
   font-family: DejaVuSansMonoBook;
+  font-size: 12px;
   color: #BABABA;
      -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
@@ -125,6 +145,61 @@ code .pun { color: #97DC08; } /* Punctuation */
 code .lit { color: #9B61FF; } /* Literal */
 code .str { color: #E1C543; } /* String */
 
+/* ------------------------------ Documentation ------------------------------ */
+#docs .doc {
+     -moz-transition: 0.2s opacity ease-out;
+  -webkit-transition: 0.2s opacity ease-out;
+       -o-transition: 0.2s opacity ease-out;
+}
+
+#docs dl:hover .doc:not(:hover) { opacity: 0.3; }
+
+#docs dl dt {
+}
+
+#docs dl dt .signature {
+  font-weight: normal;
+}
+
+#docs dl dt .signature .class {
+  color: #9C9C9C;
+}
+
+#docs dl dt .signature .method-name, #docs dl dt .signature .property-name {
+  font-family: DejaVuSansMonoBold;
+}
+
+#docs dl dt .signature .args {
+  font-family: DejaVuSansMonoOblique;
+}
+
+#docs dl dd {
+  padding-bottom: 18px;
+}
+
+#docs dl dd code {
+  padding: 0 3px;
+  border: 1px solid transparent;
+     -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+          border-radius: 3px;
+}
+
+#docs dl dd .arg {
+  background-color: #EFE;
+  border-color: #6B6;
+}
+
+#docs dl dd .type {
+  background-color: #F0F0F0;
+  border-color: #CCC;
+}
+
+#docs dl dd ol {
+  font-size: 11px;
+  list-style-type: disc;
+}
+
 /* ------------------------------ Header ------------------------------ */
 body > header {
   margin-top: 36px;
@@ -136,6 +211,8 @@ body > header {
 
 /* ------------------------------ Footer ------------------------------ */
 footer {
+  color: #414141;
+  font-size: 11px;
 }
 
 /* ------------------------------ Demo Container ------------------------------ */
@@ -183,7 +260,7 @@ section .button {
   line-height: 18px;
   font-size: 12px;                                                                                                                                                                                                                                                 
   font-family: Helvetica;
-  text-decoration: none;
+  text-decoration: none !important;
      -moz-transition: opacity 0.5s ease-out;  /* FF3.7+ */
        -o-transition: opacity 0.5s ease-out;  /* Opera 10.5 */
   -webkit-transition: opacity 0.5s ease-out;  /* Saf3.2+, Chrome */
