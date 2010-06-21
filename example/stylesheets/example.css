@@ -146,10 +146,25 @@ code .lit { color: #9B61FF; } /* Literal */
 code .str { color: #E1C543; } /* String */
 
 /* ------------------------------ Documentation ------------------------------ */
+#docs {
+  overflow: hidden;
+}
+
 #docs .doc {
+  display: block;
+  width: 430px;
+  float: left;
      -moz-transition: 0.2s opacity ease-out;
   -webkit-transition: 0.2s opacity ease-out;
        -o-transition: 0.2s opacity ease-out;
+}
+
+#docs .doc:nth-of-type(odd) {
+  clear: both;
+}
+
+#docs .doc:nth-of-type(even) {
+  margin-left: 80px;
 }
 
 #docs dl:hover .doc:not(:hover) { opacity: 0.3; }
