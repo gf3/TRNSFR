@@ -218,7 +218,7 @@ footer {
 /* ------------------------------ Demo Container ------------------------------ */
 .demo_container {
   display: block;
-  margin: 18px auto;
+  margin: 36px auto 18px auto;
   padding: 18px 0;
   width: 620px;
      -moz-border-radius: 5px;
