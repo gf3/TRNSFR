@@ -217,7 +217,8 @@ code .str { color: #E1C543; } /* String */
 
 /* ------------------------------ Header ------------------------------ */
 body > header {
-  margin-top: 36px;
+  margin-top: 0;
+  padding-top: 36px;
 }
 
 /* ------------------------------ Demo ------------------------------ */
@@ -225,8 +226,25 @@ body > header {
 }
 
 /* ------------------------------ Footer ------------------------------ */
+html, #footer-wrapper {
+  background-color: #666;
+}
+
+#footer-wrapper {
+  padding-top: 18px;
+  background: #666 url(../images/spikes.png) left top repeat-x;
+}
+
 footer {
   color: #414141;
+}
+
+footer h3 {
+  color: #F7F7F7;
+  text-shadow: 0 -1px #000;
+}
+
+footer p {
   font-size: 11px;
 }
 
