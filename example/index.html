@@ -44,7 +44,7 @@
 
   <p>LOL NO U
 
-  <code class="prettyprint lang-js"><pre>// TRNSFR needs to know how many files you have, and big they each are
+  <code><pre class="sh_javascript">// TRNSFR needs to know how many files you have, and big they each are
 // Normally you will get this info from your upload script (i.e. HTML5 files API, Plupload, Uploadify, SWFObject, etc...)
 var files = [2048, 2048, 2048] // Three 2MB files
 
@@ -56,6 +56,7 @@ var trnsfr = $('#progress').trnsfr(files)
 uploader.onuploadevent = function(chunk_sent) {
   trnsfr.addData(chunk_sent)
 }
+
 // By total size:
 uploader.onuploadevent = function(total_sent) {
   trnsfr.setData(total_sent)
@@ -69,7 +70,83 @@ uploader.onuploadevent = function(total_sent) {
     <h3>Docs</h3>
   </header>
 
-  <p>OMG IS MANUAL
+  <p>
+    TRNSFR is a UI element meant to be used in conjunction with your current upload script.
+
+  <h4 id="docs-options">Options</h4>
+
+  <p>
+  There are a number of options that you can set globally on the TRNSFR class
+  (via <code>TRNSFR.options</code>), and pass to instances. Options and their
+  defaults:
+  
+  <dl>
+    <div class="doc">
+      <dt><code class="option"><span class="name">container_class</span> ( <span class="type">String</span> )</code>
+      <dd>
+        <p>
+          Default: <code>multi_progress</code>
+          <br>
+          Class name applied to the container element.
+    </div>
+
+    <div class="doc">
+      <dt><code class="option"><span class="name">progress_class</span> ( <span class="type">String</span> )</code>
+      <dd>
+        <p>
+          Default: <code>progress</code>
+          <br>
+          Class name applied to each of the progress elements.
+    </div>
+
+    <div class="doc">
+      <dt><code class="option"><span class="name">file_class</span> ( <span class="type">String</span> )</code>
+      <dd>
+        <p>
+          Default: <code>file_progress</code>
+          <br>
+          Class name applied to the file progress element.
+    </div>
+
+    <div class="doc">
+      <dt><code class="option"><span class="name">total_class</span> ( <span class="type">String</span> )</code>
+      <dd>
+        <p>
+          Default: <code>total_progress</code>
+          <br>
+          Class name applied to the total progress element.
+    </div>
+
+  </dl>    
+
+  <h4 id="docs-constructor">Constructor</h4>
+  <dl>
+    <div class="doc">
+      <dt><code class="signature"><span class="method-name">new</span> <span class="class">TRNSFR</span>( <span class="args">elements, files [, options]</span> ) &rarr; <span class="type">TRNSFR</span></code>
+      <dd>
+        <ol>
+          <li><code class="arg">elements</code> (<code class="type">jQuery Object</code>) &ndash; jQuery collection of elements to be used as sections.
+          <li><code class="arg">files</code> (<code class="type">Array</code>) &ndash; An array of each individual file size in bytes.
+          <li><code class="arg">options</code> (<code class="type">Object</code>) &ndash; Configuration object associated with the current instance. See the <a href="#docs-options" title="TRNSFR Options">options section</a> for more info.
+        </ol>
+        <p>
+          Instantiate a new TRNSFR object for the win.
+    </div>
+
+    <div class="doc">
+      <dt><code class="signature"><span class="class">jQuery.fn.</span><span class="method-name">trnsfr</span>( <span class="args">files [, options]</span> ) &rarr; <span class="type">TRNSFR</span></code>
+      <dd>
+        <ol>
+          <li><code class="arg">files</code> (<code class="type">Array</code>) &ndash; An array of each individual file size in bytes.
+          <li><code class="arg">options</code> (<code class="type">Object</code>) &ndash; Configuration object associated with the current instance. See the <a href="#docs-options" title="TRNSFR Options">options section</a> for more info.
+        </ol>
+        <p>
+          Instantiate a new TRNSFR object on a jQuery object.
+    </div>
+  </dl>
+  
+
+  <h4 id="instance-members">Instance Members</h4>
 
   <dl>
     <div class="doc">
@@ -146,7 +223,8 @@ uploader.onuploadevent = function(total_sent) {
   </footer>
 </div>
 
-<script src="javascripts/prettify.js"></script>
+<script src="javascripts/sh_main.min.js"></script>
+<script src="javascripts/sh_javascript.min.js"></script>
 <script src="../vendor/jquery-1.4.2.min.js"></script>
 <script src="../lib/jquery.trnsfr.js"></script>
 <script>
@@ -168,7 +246,7 @@ uploader.onuploadevent = function(total_sent) {
       return false })
 
   // Pretty Print
-  $(prettyPrint)
+  $(sh_highlightDocument)
 
   // 960 Gridder
   var gOverride =

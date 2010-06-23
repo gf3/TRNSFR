@@ -90,6 +90,14 @@ h3 {
   text-shadow: 0 1px 1px #FFF;
 }
 
+h4 {
+  margin-bottom: 18px;
+  font-size: 14px;
+  line-height: 18px;
+  text-shadow: 0 1px 1px #FFF;
+  text-transform: uppercase;
+}
+
 p, ul, ol{
   margin-bottom: 18px;
 }
@@ -121,14 +129,14 @@ body > header, section, footer {
 
 /* ------------------------------ Code ------------------------------ */
 code { font-family: DejaVuSansMonoBook; }
-code > pre {
+code > pre, code + pre /* FireFox Hack */ {
   margin: 18px 0;
   padding: 9px;
   width: 942px;
   background: #1F1F1F;
   font-family: DejaVuSansMonoBook;
   font-size: 12px;
-  color: #BABABA;
+  color: #FFF;
      -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
           border-radius: 5px;
@@ -138,25 +146,25 @@ code > pre {
 }
 
 /* ------------------------------ Syntax Highlighting ------------------------------ */
-code .com { color: #BABABA; } /* Comment */
-code .kwd { color: #F8005D; } /* Keyword */
-code .pln { color: #FFFFFF; } /* Plain */
-code .pun { color: #97DC08; } /* Punctuation */
-code .lit { color: #9B61FF; } /* Literal */
-code .str { color: #E1C543; } /* String */
+pre .sh_comment  { color: #BABABA; } /* Comment */
+pre .sh_keyword  { color: #F8005D; } /* Keyword */
+pre .sh_symbol   { color: #97DC08; } /* Symbol */
+pre .sh_string   { color: #E1C543; } /* String */
+pre .sh_number   { color: #9B61FF; } /* Number */
+pre .sh_cbracket { color: #97DC08; } /* Curly Bracket */
+pre .sh_function { font-family: DejaVuSansMonoOblique; } /* Function */
+
 
 /* ------------------------------ Documentation ------------------------------ */
 #docs {
   overflow: hidden;
 }
 
+/*
 #docs .doc {
   display: block;
   width: 430px;
   float: left;
-     -moz-transition: 0.2s opacity ease-out;
-  -webkit-transition: 0.2s opacity ease-out;
-       -o-transition: 0.2s opacity ease-out;
 }
 
 #docs .doc:nth-of-type(odd) {
@@ -166,21 +174,22 @@ code .str { color: #E1C543; } /* String */
 #docs .doc:nth-of-type(even) {
   margin-left: 80px;
 }
+*/
 
-#docs dl:hover .doc:not(:hover) { opacity: 0.3; }
+#docs dl { overflow: hidden; }
 
 #docs dl dt {
 }
 
-#docs dl dt .signature {
+#docs dl dt .signature, #docs dl dt .option {
   font-weight: normal;
 }
 
-#docs dl dt .signature .class {
+#docs dl dt .signature .class, #docs dl dt .option .type {
   color: #9C9C9C;
 }
 
-#docs dl dt .signature .method-name, #docs dl dt .signature .property-name {
+#docs dl dt .signature .method-name, #docs dl dt .signature .property-name, #docs dl dt .option .name {
   font-family: DejaVuSansMonoBold;
 }
 
@@ -215,6 +224,10 @@ code .str { color: #E1C543; } /* String */
   list-style-type: disc;
 }
 
+#docs dl dd > p {
+  margin-left: 24px;
+}
+
 /* ------------------------------ Header ------------------------------ */
 body > header {
   margin-top: 0;
@@ -241,6 +254,12 @@ footer {
 
 footer h3 {
   color: #F7F7F7;
+  text-shadow: 0 -1px #000;
+}
+
+footer h4 {
+  color: #999;
+  font-weight: normal;
   text-shadow: 0 -1px #000;
 }
 
