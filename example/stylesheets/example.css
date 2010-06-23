@@ -238,6 +238,33 @@ body > header {
 #demo {
 }
 
+/* ------------------------------ Get ------------------------------ */
+#get #downloader {
+  overflow: hidden;
+  text-align: center;
+}
+
+#get #downloader a {
+  margin: 0 auto;
+  display: inline-block;
+  padding-top: 142px;
+  text-align: center;
+}
+
+#get #downloader a:first-child {
+  padding-right: 20px;
+}
+
+#get #get-github {
+  width: 147px;
+  background: transparent url(../images/github.png) left top no-repeat;
+}
+
+#get #get-zipfile {
+  width: 144px;
+  background: transparent url(../images/zip.png) left top no-repeat;
+}
+
 /* ------------------------------ Footer ------------------------------ */
 html, #footer-wrapper {
   background-color: #666;
