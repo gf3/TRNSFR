@@ -71,7 +71,7 @@ h1, h2, h3 {
 
 h1 {
   line-height: 18px;
-  font-size: 14px;
+  font-size: 18px;
   font-family: Arial;
   font-weight: bold;
   text-transform: uppercase;
@@ -121,10 +121,34 @@ p, ul, ol{
 }
 
 /* Common Layout */
-body > header, section, footer {
+body > header hgroup, section, footer, nav {
   display: block;
   margin: 18px auto;
   width: 960px;
+}
+
+/* ------------------------------ Header ------------------------------ */
+body > header {
+  display: block;
+  margin-top: 0;
+  padding-top: 36px;
+  padding-bottom: 18px;
+  background: #D0AB73 url(../images/cork.png) left top repeat;
+     -moz-box-shadow: inset 0 -2px 2px rgba(0,0,0, .35), 0 1px 0 #FFF; /* FF3.5+ */
+  -webkit-box-shadow: inset 0 -2px 2px rgba(0,0,0, .35), 0 1px 0 #FFF; /* Saf3.0+, Chrome */
+          box-shadow: inset 0 -2px 2px rgba(0,0,0, .35), 0 1px 0 #FFF; /* Opera 10.5, IE 9.0 */
+}
+
+body > header h2 {
+  font-family: Arial;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #FFF;
+  text-shadow: 0 2px 2px rgba(0,0,0, .6);
+}
+
+body > header h1 {
+  color: #574428;
 }
 
 /* ------------------------------ Code ------------------------------ */
@@ -228,12 +252,6 @@ pre .sh_function { font-family: DejaVuSansMonoOblique; } /* Function */
   margin-left: 24px;
 }
 
-/* ------------------------------ Header ------------------------------ */
-body > header {
-  margin-top: 0;
-  padding-top: 36px;
-}
-
 /* ------------------------------ Demo ------------------------------ */
 #demo {
 }
@@ -247,7 +265,7 @@ body > header {
 #get #downloader a {
   margin: 0 auto;
   display: inline-block;
-  padding-top: 142px;
+  padding-top: 144px;
   text-align: center;
 }
 
