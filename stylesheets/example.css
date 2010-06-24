@@ -1,0 +1,392 @@
+/*
+  Site: TRNSFR
+  Date: May 11, 2010
+  Author: Gianni Chiappetta
+  Description: Base style sheet for TRNSFR
+  Author Notes: Soup beezies!?
+
+  WEB COLOURS USED FOR THIS SITE
+  ---------------------------------------------------------------------
+  #000000   Colour      Used for: 
+  #000000   Colour      Used for: 
+  #000000   Colour      Used for:   
+  ---------------------------------------------------------------------
+*/
+html, body {
+  background-color: #EBEBEB;
+  font-size: 14px;
+  line-height: 18px;
+  color: #414141;
+}
+
+/* Typography */
+@font-face {
+  font-family: 'RalewayThin';
+  src: url('../fonts/raleway_thin-webfont.eot');
+  src: local('☺'),
+       url('../fonts/raleway_thin-webfont.woff')                format('woff'),
+       url('../fonts/raleway_thin-webfont.ttf')                 format('truetype'),
+       url('../fonts/raleway_thin-webfont.svg#webfont4QN4EyXc') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'DejaVuSansMonoBook';
+  src: url('../fonts/DejaVuSansMono-webfont.eot');
+  src: local('☺'), url('../fonts/DejaVuSansMono-webfont.woff') format('woff'), url('../fonts/DejaVuSansMono-webfont.ttf') format('truetype'), url('../fonts/DejaVuSansMono-webfont.svg#webfont') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'DejaVuSansMonoOblique';
+  src: url('../fonts/DejaVuSansMono-Oblique-webfont.eot');
+  src: local('☺'), url('../fonts/DejaVuSansMono-Oblique-webfont.woff') format('woff'), url('../fonts/DejaVuSansMono-Oblique-webfont.ttf') format('truetype'), url('../fonts/DejaVuSansMono-Oblique-webfont.svg#webfont') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'DejaVuSansMonoBold';
+  src: url('../fonts/DejaVuSansMono-Bold-webfont.eot');
+  src: local('☺'), url('../fonts/DejaVuSansMono-Bold-webfont.woff') format('woff'), url('../fonts/DejaVuSansMono-Bold-webfont.ttf') format('truetype'), url('../fonts/DejaVuSansMono-Bold-webfont.svg#webfont') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'DejaVuSansMonoBoldOblique';
+  src: url('../fonts/DejaVuSansMono-BoldOblique-webfont.eot');
+  src: local('☺'), url('../fonts/DejaVuSansMono-BoldOblique-webfont.woff') format('woff'), url('../fonts/DejaVuSansMono-BoldOblique-webfont.ttf') format('truetype'), url('../fonts/DejaVuSansMono-BoldOblique-webfont.svg#webfont') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+h1, h2, h3 {
+  font-family: RalewayThin, Helvetica;
+  font-weight: normal;
+  font-style: normal;
+}
+
+h1 {
+  line-height: 18px;
+  font-size: 18px;
+  font-family: Arial;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+h2 {
+  margin-bottom: 18px;
+  font-size: 36px;
+  line-height: 54px;
+}
+
+h3 {
+  margin-bottom: 18px;
+  font-size: 24px;
+  line-height: 36px;
+  text-shadow: 0 1px 1px #FFF;
+}
+
+h4 {
+  margin-bottom: 18px;
+  font-size: 14px;
+  line-height: 18px;
+  text-shadow: 0 1px 1px #FFF;
+  text-transform: uppercase;
+}
+
+p, ul, ol{
+  margin-bottom: 18px;
+}
+
+/* Links */
+.content a:link {
+  text-decoration: underline;
+  color: #3A3939;
+}
+.content a:visited {
+  text-decoration: underline;
+  color: #3A3939;
+}
+.content a:hover {
+  text-decoration: underline;
+  color: #00b4ff;
+}
+.content a:active {
+  text-decoration: underline;
+  color: #3A3939;
+}
+
+/* Common Layout */
+body > header hgroup, section, footer, nav {
+  display: block;
+  margin: 18px auto;
+  width: 960px;
+}
+
+/* ------------------------------ Header ------------------------------ */
+body > header {
+  display: block;
+  margin-top: 0;
+  padding-top: 36px;
+  padding-bottom: 18px;
+  background: #D0AB73 url(../images/cork.png) left top repeat;
+     -moz-box-shadow: inset 0 -2px 2px rgba(0,0,0, .35), 0 1px 0 #FFF; /* FF3.5+ */
+  -webkit-box-shadow: inset 0 -2px 2px rgba(0,0,0, .35), 0 1px 0 #FFF; /* Saf3.0+, Chrome */
+          box-shadow: inset 0 -2px 2px rgba(0,0,0, .35), 0 1px 0 #FFF; /* Opera 10.5, IE 9.0 */
+}
+
+body > header h2 {
+  font-family: Arial;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #FFF;
+  text-shadow: 0 2px 2px rgba(0,0,0, .6);
+}
+
+body > header h1 {
+  color: #574428;
+}
+
+/* ------------------------------ Code ------------------------------ */
+code { font-family: DejaVuSansMonoBook; }
+code > pre, code + pre /* FireFox Hack */ {
+  margin: 18px 0;
+  padding: 9px;
+  width: 942px;
+  background: #1F1F1F;
+  font-family: DejaVuSansMonoBook;
+  font-size: 12px;
+  color: #FFF;
+     -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+          border-radius: 5px;
+     -moz-box-shadow: inset 0 1px 0 #000, inset 0 -1px 0 #FFF; /* FF3.5+ */
+  -webkit-box-shadow: inset 0 1px 0 #000, inset 0 -1px 0 #FFF; /* Saf3.0+, Chrome */
+          box-shadow: inset 0 1px 0 #000, inset 0 -1px 0 #FFF; /* Opera 10.5, IE 9.0 */
+}
+
+/* ------------------------------ Syntax Highlighting ------------------------------ */
+pre .sh_comment  { color: #BABABA; } /* Comment */
+pre .sh_keyword  { color: #F8005D; } /* Keyword */
+pre .sh_symbol   { color: #97DC08; } /* Symbol */
+pre .sh_string   { color: #E1C543; } /* String */
+pre .sh_number   { color: #9B61FF; } /* Number */
+pre .sh_cbracket { color: #97DC08; } /* Curly Bracket */
+pre .sh_function { font-family: DejaVuSansMonoOblique; } /* Function */
+
+
+/* ------------------------------ Documentation ------------------------------ */
+#docs {
+  overflow: hidden;
+}
+
+/*
+#docs .doc {
+  display: block;
+  width: 430px;
+  float: left;
+}
+
+#docs .doc:nth-of-type(odd) {
+  clear: both;
+}
+
+#docs .doc:nth-of-type(even) {
+  margin-left: 80px;
+}
+*/
+
+#docs dl { overflow: hidden; }
+
+#docs dl dt {
+}
+
+#docs dl dt .signature, #docs dl dt .option {
+  font-weight: normal;
+}
+
+#docs dl dt .signature .class, #docs dl dt .option .type {
+  color: #9C9C9C;
+}
+
+#docs dl dt .signature .method-name, #docs dl dt .signature .property-name, #docs dl dt .option .name {
+  font-family: DejaVuSansMonoBold;
+}
+
+#docs dl dt .signature .args {
+  font-family: DejaVuSansMonoOblique;
+}
+
+#docs dl dd {
+  padding-bottom: 18px;
+}
+
+#docs dl dd code {
+  padding: 0 3px;
+  border: 1px solid transparent;
+     -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+          border-radius: 3px;
+}
+
+#docs dl dd .arg {
+  background-color: #EFE;
+  border-color: #6B6;
+}
+
+#docs dl dd .type {
+  background-color: #F0F0F0;
+  border-color: #CCC;
+}
+
+#docs dl dd ol {
+  font-size: 11px;
+  list-style-type: disc;
+}
+
+#docs dl dd > p {
+  margin-left: 24px;
+}
+
+/* ------------------------------ Demo ------------------------------ */
+#demo {
+}
+
+/* ------------------------------ Get ------------------------------ */
+#get #downloader {
+  overflow: hidden;
+  text-align: center;
+}
+
+#get #downloader a {
+  margin: 0 auto;
+  display: inline-block;
+  padding-top: 144px;
+  text-align: center;
+}
+
+#get #downloader a:first-child {
+  padding-right: 20px;
+}
+
+#get #get-github {
+  width: 147px;
+  background: transparent url(../images/github.png) left top no-repeat;
+}
+
+#get #get-zipfile {
+  width: 144px;
+  background: transparent url(../images/zip.png) left top no-repeat;
+}
+
+/* ------------------------------ Footer ------------------------------ */
+html, #footer-wrapper {
+  background-color: #666;
+}
+
+#footer-wrapper {
+  padding-top: 18px;
+  background: #666 url(../images/spikes.png) left top repeat-x;
+}
+
+footer {
+  color: #414141;
+}
+
+footer h3 {
+  color: #F7F7F7;
+  text-shadow: 0 -1px #000;
+}
+
+footer h4 {
+  color: #999;
+  font-weight: normal;
+  text-shadow: 0 -1px #000;
+}
+
+footer p {
+  font-size: 11px;
+}
+
+/* ------------------------------ Demo Container ------------------------------ */
+.demo_container {
+  display: block;
+  margin: 36px auto 18px auto;
+  padding: 18px 0;
+  width: 620px;
+     -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+          border-radius: 5px;
+  background-color: #D0D0D0;
+  background-image: -moz-linear-gradient(top, #D0D0D0, #A7A7A7); /* FF3.6 */
+  background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #D0D0D0),color-stop(1, #A7A7A7)); /* Saf4+, Chrome */
+            filter:  progid:DXImageTransform.Microsoft.gradient(startColorStr='#D0D0D0', EndColorStr='#A7A7A7'); /* IE6,IE7 */
+        -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#D0D0D0', EndColorStr='#A7A7A7')"; /* IE8 */
+     -moz-box-shadow: inset 0 1px 1px #E2E2E2, 0 0 1px rgba(0, 0, 0, .95), 0 5px 15px rgba(0, 0, 0, .4);
+  -webkit-box-shadow: inset 0 1px 1px #E2E2E2, 0 0 1px rgba(0, 0, 0, .95), 0 5px 15px rgba(0, 0, 0, .4);
+          box-shadow: inset 0 1px 1px #E2E2E2, 0 0 1px rgba(0, 0, 0, .95), 0 5px 15px rgba(0, 0, 0, .4);
+}
+
+.demo_container .button {
+  margin-top: 18px;
+  margin-left: 80px;
+}
+
+/* ------------------------------ Buttons ------------------------------ */
+section .button {
+  display: inline-block;
+  margin: 0 10px;
+  padding: 0 10px;
+  height: 18px;
+     -moz-border-radius: 9px;
+  -webkit-border-radius: 9px;
+          border-radius: 9px;
+  background-color: #666666;
+  background-image: -moz-linear-gradient(top, #666666, #333333); /* FF3.6 */
+  background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #666666),color-stop(1, #333333)); /* Saf4+, Chrome */
+            filter:  progid:DXImageTransform.Microsoft.gradient(startColorStr='#666666', EndColorStr='#333333'); /* IE6,IE7 */
+        -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#666666', EndColorStr='#333333')"; /* IE8 */
+     -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.6), inset 0 0 2px rgba(255, 255, 255, .25), inset 0 1px 0 rgba(255, 255, 255, .33);
+  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.6), inset 0 0 2px rgba(255, 255, 255, .25), inset 0 1px 0 rgba(255, 255, 255, .33);
+          box-shadow: 0 1px 2px rgba(0, 0, 0, 0.6), inset 0 0 2px rgba(255, 255, 255, .25), inset 0 1px 0 rgba(255, 255, 255, .33);
+  color: #B8B9B9;
+  line-height: 18px;
+  font-size: 12px;                                                                                                                                                                                                                                                 
+  font-family: Helvetica;
+  text-decoration: none !important;
+     -moz-transition: opacity 0.5s ease-out;  /* FF3.7+ */
+       -o-transition: opacity 0.5s ease-out;  /* Opera 10.5 */
+  -webkit-transition: opacity 0.5s ease-out;  /* Saf3.2+, Chrome */
+}
+
+section .button:active {
+  background-color: #666666;
+  background-image: -moz-linear-gradient(top, #666666, #999999); /* FF3.6 */
+  background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #666666),color-stop(1, #999999)); /* Saf4+, Chrome */
+            filter:  progid:DXImageTransform.Microsoft.gradient(startColorStr='#666666', EndColorStr='#999999'); /* IE6,IE7 */
+        -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#666666', EndColorStr='#999999')"; /* IE8 */
+  color: #FFF;
+}
+
+section .button:hover {
+  color: #B8B9B9;
+  text-decoration: none;
+}
+
+section .button.light {
+  background-color: #FEFEFE;
+  background-image: -moz-linear-gradient(top, #FEFEFE, #B8B8B8); /* FF3.6 */
+  background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #FEFEFE),color-stop(1, #B8B8B8)); /* Saf4+, Chrome */
+            filter:  progid:DXImageTransform.Microsoft.gradient(startColorStr='#FEFEFE', EndColorStr='#B8B8B8'); /* IE6,IE7 */
+        -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#FEFEFE', EndColorStr='#B8B8B8')"; /* IE8 */
+  color: #4D4D4D;
+  text-shadow: 0 1px 0 rgb(255, 255, 255, 1);
+}
+
+section .button.light {
+}
+

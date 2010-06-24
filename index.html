@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+<head>
+ <title>jQuery TRNSFR - Sexy Progress Bars</title>
+  <!--[if IE]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <link rel="stylesheet" href="stylesheets/tripoli.simple.css" type="text/css">
+  <!--[if IE]><link rel="stylesheet" href="stylesheets/tripoli.simple.ie.css" type="text/css"><![endif]-->
+  <link rel="stylesheet" href="stylesheets/example.css" type="text/css">
+  <link rel="stylesheet" href="../lib/jquery.trnsfr.css" type="text/css">
+
+<body>
+
+<!-- Header -->
+<header class="content">
+  <hgroup>
+    <h1>TRNSFR</h1>
+    <h2>A Transmit 4-inspired multi progress bar.</h2>
+  </hgroup>
+</header>
+
+<!-- Demo -->
+<section id="demo" class="content">
+  <header>
+    <h3>Demo</h3>
+  </header>
+
+  <p>Simulate the upload of ten 1MB files.
+
+  <div class="demo_container">
+    <div id="progress-1"></div>
+
+    <a href="#" id="upload-1" class="button light">Upload a Bunch of Files</a>
+  </div>
+</section>
+
+<!-- Get -->
+<section id="get" class="content">
+  <header>
+    <h3>Get</h3>
+  </header>
+
+  <div id="downloader">
+    <a id="get-github" href="http://github.com/gf3/trnsfr" title="Browse Source on Github">Github</a>
+    <a id="get-zipfile" href="http://github.com/gf3/trnsfr/zipball/master" title="Download Zip Archive">Zip Archive</a>
+  </div>
+
+</section>
+
+<!-- Usage -->
+<section id="usage" class="content">
+  <header>
+    <h3>Usage</h3>
+  </header>
+
+  <p>LOL NO U</p>
+
+  <code><pre class="sh_javascript">// TRNSFR needs to know how many files you have, and big they each are
+// Normally you will get this info from your upload script (i.e. HTML5 files API, Plupload, Uploadify, SWFObject, etc...)
+var files = [2048, 2048, 2048] // Three 2MB files
+
+// Now let's initialise our TRNSFR bar with our files
+var trnsfr = $('#progress').trnsfr(files)
+
+// There are two ways to update the progress element
+// By chunk:
+uploader.onuploadevent = function(chunk_sent) {
+  trnsfr.addData(chunk_sent)
+}
+
+// By total size:
+uploader.onuploadevent = function(total_sent) {
+  trnsfr.setData(total_sent)
+}
+</pre></code>
+</section>
+
+<!-- Docs -->
+<section id="docs" class="content">
+  <header>
+    <h3>Docs</h3>
+  </header>
+
+  <p>
+    TRNSFR is a UI element meant to be used in conjunction with your current upload script.
+
+  <h4 id="docs-options">Options</h4>
+
+  <p>
+  There are a number of options that you can set globally on the TRNSFR class
+  (via <code>TRNSFR.options</code>), and pass to instances. Options and their
+  defaults:
+  
+  <dl>
+    <div class="doc">
+      <dt><code class="option"><span class="name">container_class</span> ( <span class="type">String</span> )</code>
+      <dd>
+        <p>
+          Default: <code>multi_progress</code>
+          <br>
+          Class name applied to the container element.
+    </div>
+
+    <div class="doc">
+      <dt><code class="option"><span class="name">progress_class</span> ( <span class="type">String</span> )</code>
+      <dd>
+        <p>
+          Default: <code>progress</code>
+          <br>
+          Class name applied to each of the progress elements.
+    </div>
+
+    <div class="doc">
+      <dt><code class="option"><span class="name">file_class</span> ( <span class="type">String</span> )</code>
+      <dd>
+        <p>
+          Default: <code>file_progress</code>
+          <br>
+          Class name applied to the file progress element.
+    </div>
+
+    <div class="doc">
+      <dt><code class="option"><span class="name">total_class</span> ( <span class="type">String</span> )</code>
+      <dd>
+        <p>
+          Default: <code>total_progress</code>
+          <br>
+          Class name applied to the total progress element.
+    </div>
+
+  </dl>    
+
+  <h4 id="docs-constructor">Constructor</h4>
+  <dl>
+    <div class="doc">
+      <dt><code class="signature"><span class="method-name">new</span> <span class="class">TRNSFR</span>( <span class="args">elements, files [, options]</span> ) &rarr; <span class="type">TRNSFR</span></code>
+      <dd>
+        <ol>
+          <li><code class="arg">elements</code> (<code class="type">jQuery Object</code>) &ndash; jQuery collection of elements to be used as sections.
+          <li><code class="arg">files</code> (<code class="type">Array</code>) &ndash; An array of each individual file size in bytes.
+          <li><code class="arg">options</code> (<code class="type">Object</code>) &ndash; Configuration object associated with the current instance. See the <a href="#docs-options" title="TRNSFR Options">options section</a> for more info.
+        </ol>
+        <p>
+          Instantiate a new TRNSFR object for the win.
+    </div>
+
+    <div class="doc">
+      <dt><code class="signature"><span class="class">jQuery.fn.</span><span class="method-name">trnsfr</span>( <span class="args">files [, options]</span> ) &rarr; <span class="type">TRNSFR</span></code>
+      <dd>
+        <ol>
+          <li><code class="arg">files</code> (<code class="type">Array</code>) &ndash; An array of each individual file size in bytes.
+          <li><code class="arg">options</code> (<code class="type">Object</code>) &ndash; Configuration object associated with the current instance. See the <a href="#docs-options" title="TRNSFR Options">options section</a> for more info.
+        </ol>
+        <p>
+          Instantiate a new TRNSFR object on a jQuery object.
+    </div>
+  </dl>
+  
+
+  <h4 id="instance-members">Instance Members</h4>
+
+  <dl>
+    <div class="doc">
+      <dt><code class="signature"><span class="class">TRNSFR</span><span class="method-type">#</span><span class="method-name">addData</span>( <span class="args">bytes</span> ) &rarr; <span class="type">Undefined</span></code>
+      <dd>
+        <ol>
+          <li><code class="arg">bytes</code> (<code class="type">Number</code>) &ndash; Amount of data to add.
+        </ol>
+        <p>
+          Add a chunk of data to the total bytes loaded.
+    </div>
+
+    <div class="doc">
+      <dt><code class="signature"><span class="class">TRNSFR</span><span class="method-type">#</span><span class="method-name">setData</span>( <span class="args">bytes</span> ) &rarr; <span class="type">Undefined</span></code>
+      <dd>
+        <ol>
+          <li><code class="arg">bytes</code> (<code class="type">Number</code>) &ndash; Amount of data to set.
+        </ol>
+        <p>
+          Set the amount of total bytes loaded.
+    </div>
+
+    <div class="doc">
+      <dt><code class="signature"><span class="class">TRNSFR</span><span class="method-type">#</span><span class="property-name">total_size</span> &rarr; <span class="type">Number</span></code>
+      <dd>
+        <p>
+          Total size (in bytes) of all the files.
+    </div>
+
+    <div class="doc">
+      <dt><code class="signature"><span class="class">TRNSFR</span><span class="method-type">#</span><span class="property-name">done_size</span> &rarr; <span class="type">Number</span></code>
+      <dd>
+        <p>
+          Current amount of data transferred (in bytes).
+    </div>
+
+    <div class="doc">
+      <dt><code class="signature"><span class="class">TRNSFR</span><span class="method-type">#</span><span class="property-name">complete</span> &rarr; <span class="type">Boolean</span></code>
+      <dd>
+        <p>
+          Updated when the <code>`done_size`</code> has reached the <code>`total_size`</code>.
+    </div>
+
+    <div class="doc">
+      <dt><code class="signature"><span class="class">TRNSFR</span><span class="method-type">#</span><span class="property-name">options</span> &rarr; <span class="type">Object</span></code>
+      <dd>
+        <p>
+          Options used to initialise the instance.
+    </div>
+  </dl>
+</section>
+
+<!-- Footer -->
+<div id="footer-wrapper">
+  <footer class="content">
+    <header>
+      <h3>Joey, have you ever been in a... in a Turkish prison?</h3>
+    </header>
+
+    <p>Written by <a href="http://gf3.ca" class="author">Gianni "gf3" Chiappetta</a>. My <a href="http://twitter.com/gf3" title="Gianni's Twitter">Twitter</a> and <a href="http://github.com/gf3" title="Gianni's GitHub">GitHub</a>.
+
+    <p>A big thank-you to <a href="http://allyoucanleet.com/" class="author">John David Dalton</a> for putting up with my constant JS performance questions.
+
+    <h4>License</h4>
+    <p xmlns:dct="http://purl.org/dc/terms/" xmlns:vcard="http://www.w3.org/2001/vcard-rdf/3.0#">
+      <a rel="license" href="http://creativecommons.org/publicdomain/zero/1.0/">CC0 License</a>.
+      To the extent possible under law, <a href="gf3.ca" rel="dct:publisher"><span property="dct:title">Gianni Chiappetta</span></a>
+      has waived all copyright and related or neighboring rights to
+      <span property="dct:title">TRNSFR</span>.
+      This work is published from
+      <span about="gf3.ca" property="vcard:Country" datatype="dct:ISO3166" content="CA">Canada</span>.
+    </p>
+
+  </footer>
+</div>
+
+<script src="javascripts/sh_main.min.js"></script>
+<script src="javascripts/sh_javascript.min.js"></script>
+<script src="../vendor/jquery-1.4.2.min.js"></script>
+<script src="../lib/jquery.trnsfr.js"></script>
+<script>
+
+  var timer
+    , files = [ 1024, 1024, 1024, 1024, 1024, 1024, 1024, 1024, 1024, 1024 ]
+    , progress_1 = $('#progress-1').trnsfr(files)
+
+  $('#upload-1').click(function() {
+      var $this = $(this)
+        .css('opacity', .5)
+        .html('LOL')
+
+      timer = setInterval(function() {
+        if (! progress_1.complete)
+          progress_1.addData(128)
+        else
+          clearInterval(timer), $this.html('Complete') }, 125)
+      return false })
+
+  // Pretty Print
+  $(sh_highlightDocument)
+
+  // 960 Gridder
+  var gOverride =
+    { urlBase: 'http://gridder.andreehansson.se/releases/latest/'
+    , gColor: '#EEEEEE'
+    , gColumns: 12
+    , gOpacity: 0.35
+    , gWidth: 10
+    , pColor: '#C0C0C0'
+    , pHeight: 18
+    , pOffset: 0
+    , pOpacity: 0.55
+    , center: true
+    , gEnabled: true
+    , pEnabled: true
+    , setupEnabled: true
+    , fixFlash: true
+    , size: 960
+  }
+
+</script>
+
