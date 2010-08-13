@@ -14,6 +14,7 @@
   -webkit-box-shadow: inset 0 4px 4px #6B6B6B, 0 1px 0 #D7D7D7;
           box-shadow: inset 0 4px 4px #6B6B6B, 0 1px 0 #D7D7D7;
   overflow: hidden;
+  -webkit-background-clip: padding-box;
 }
 
 .progress {
@@ -30,6 +31,7 @@
      -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
           border-radius: 5px;
+  -webkit-background-clip: padding-box;
 }
 
 .file_progress {
@@ -41,6 +43,7 @@
      -moz-box-shadow: inset 0 1px 0 #FFF; /* FF3.5+ */
   -webkit-box-shadow: inset 0 1px 0 #FFF; /* Saf3.0+, Chrome */
           box-shadow: inset 0 1px 0 #FFF; /* Opera 10.5, IE 9.0 */
+  -webkit-background-clip: padding-box;
 }
 
 .total_progress {
@@ -52,5 +55,6 @@
      -moz-box-shadow: inset 0 1px 0 #A2A2A2; /* FF3.5+ */
   -webkit-box-shadow: inset 0 1px 0 #A2A2A2; /* Saf3.0+, Chrome */
           box-shadow: inset 0 1px 0 #A2A2A2; /* Opera 10.5, IE 9.0 */
+  -webkit-background-clip: padding-box;
 }
 
